@@ -1,0 +1,31 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="mattvick_harvest_app.file">null</parameter>
+        <parameter key="mattvick_harvest_app.consumer_key">null</parameter>
+        <parameter key="mattvick_harvest_app.consumer_secret">null</parameter>
+        <parameter key="mattvick_harvest_app.oauth_token">null</parameter>
+        <parameter key="mattvick_harvest_app.oauth_token_secret">null</parameter>
+        
+        <parameter key="mattvick_harvest_app.api.class">HarvestApi</parameter>
+        <parameter key="mattvick_harvest_app.service.class">Mattvick\HarvestAppBundle\Services\HarvestApp</parameter>
+    </parameters>
+    
+    <services>
+        <service id="harvest_app" class="%mattvick_harvest_app.service.class%">
+            <argument type="service" id="mattvick_harvest_app.api"/>
+        </service>
+        
+        <service id="mattvick_harvest_app.api" class="%mattvick_harvest_app.api.class%">
+            <file>%mattvick_harvest_app.file%</file>
+            <argument key="consumer_key">%mattvick_harvest_app.consumer_key%</argument>
+            <argument key="consumer_secret">%mattvick_harvest_app.consumer_secret%</argument>
+            <argument key="oauth_token">%mattvick_harvest_app.oauth_token%</argument>
+            <argument key="oauth_token_secret">%mattvick_harvest_app.oauth_token_secret%</argument>
+        </service>
+    </services>
+</container>

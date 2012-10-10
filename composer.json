@@ -1,0 +1,35 @@
+{
+    "name": "mattvick/harvest-app-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony2 wrapper around HaPi Harvest API client for app usage",
+    "keywords": ["Harvest", "API"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matthew Vickery",
+            "email": "vickery.matthew@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "2.*",
+        "mdbitz/hapi": "1.1.1"
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "mdbitz/hapi",
+                "version": "1.1.1",
+                "dist": {
+                    "url": "http://labs.mdbitz.com/wp-content/uploads/2010/10/HaPi-1.1.1.zip",
+                    "type": "zip"
+                }
+            }
+        }
+    ],
+    "autoload": {
+        "psr-0": { "Mattvick\\HarvestAppBundle": "" }
+    },
+    "target-dir": "Mattvick/HarvestAppBundle"
+}
