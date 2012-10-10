@@ -24,6 +24,11 @@
                 "dist": {
                     "url": "http://labs.mdbitz.com/wp-content/uploads/2010/10/HaPi-1.1.1.zip",
                     "type": "zip"
+                },
+                "source": {
+                    "url": "git://github.com/mattvick/HaPi.git",
+                    "type": "git",
+                    "reference": "master"
                 }
             }
         }
