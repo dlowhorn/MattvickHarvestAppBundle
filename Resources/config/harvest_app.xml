@@ -11,7 +11,6 @@
         <parameter key="mattvick_harvest_app.account">null</parameter>
         <parameter key="mattvick_harvest_app.ssl">null</parameter>
         <parameter key="mattvick_harvest_app.mode">null</parameter>
-        <parameter key="mattvick_harvest_app.headers">null</parameter>
         
         <parameter key="mattvick_harvest_app.api.class">HarvestApi</parameter>
         <parameter key="mattvick_harvest_app.file">null</parameter>
@@ -25,7 +24,6 @@
             <argument key="account">%mattvick_harvest_app.account%</argument>
             <argument key="ssl">%mattvick_harvest_app.ssl%</argument>
             <argument key="mode">%mattvick_harvest_app.mode%</argument>
-            <argument key="headers">%mattvick_harvest_app.headers%</argument>
         </service>
         
         <service id="mattvick_harvest_app.api" class="%mattvick_harvest_app.api.class%">
