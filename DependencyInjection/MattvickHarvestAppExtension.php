@@ -26,7 +26,7 @@ class MattvickHarvestAppExtension extends Extension
             $container->setAlias($config['alias'], 'mattvick_harvest_app');
         }        
 
-        foreach (array('file', '_user', '_password', '_account', '_ssl', '_mode', '_headers', ) as $attribute) {
+        foreach (array('file', 'user', 'password', 'account', 'ssl', 'mode', 'headers') as $attribute) {
             if (isset($config[$attribute])) {
                 $container->setParameter('mattvick_harvest_app.'.$attribute, $config[$attribute]);
             }

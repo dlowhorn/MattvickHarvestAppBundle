@@ -14,9 +14,17 @@ class HarvestApp {
     /**
      * @param \HarvestAPI $harvest HarvestAPI API client instance
      */
-    public function __construct(HarvestAPI $harvest)
+    public function __construct(HarvestAPI $harvest, $user, $password, $account, $ssl, $mode, $headers)
     {
         $this->harvest = $harvest;
+
+        // Set parameters
+        $this->harvest->setUser($user);
+        $this->harvest->setPassword($password);
+        $this->harvest->setAccount($account);
+        $this->harvest->setSsl($ssl);
+        $this->harvest->setMode($mode);
+        $this->harvest->setHeaders($headers);
     }
 
     /**

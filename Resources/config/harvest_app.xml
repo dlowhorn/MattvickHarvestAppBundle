@@ -5,31 +5,31 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
-        <parameter key="mattvick_harvest_app.file">null</parameter>
-        <parameter key="mattvick_harvest_app._user">null</parameter>
-        <parameter key="mattvick_harvest_app._password">null</parameter>
-        <parameter key="mattvick_harvest_app._account">null</parameter>
-        <parameter key="mattvick_harvest_app._ssl">null</parameter>
-        <parameter key="mattvick_harvest_app._mode">null</parameter>
-        <parameter key="mattvick_harvest_app._headers">null</parameter>
+        <parameter key="mattvick_harvest_app.service.class">Mattvick\HarvestAppBundle\Services\HarvestApp</parameter>
+        <parameter key="mattvick_harvest_app.user">null</parameter>
+        <parameter key="mattvick_harvest_app.password">null</parameter>
+        <parameter key="mattvick_harvest_app.account">null</parameter>
+        <parameter key="mattvick_harvest_app.ssl">null</parameter>
+        <parameter key="mattvick_harvest_app.mode">null</parameter>
+        <parameter key="mattvick_harvest_app.headers">null</parameter>
         
         <parameter key="mattvick_harvest_app.api.class">HarvestApi</parameter>
-        <parameter key="mattvick_harvest_app.service.class">Mattvick\HarvestAppBundle\Services\HarvestApp</parameter>
+        <parameter key="mattvick_harvest_app.file">null</parameter>
     </parameters>
     
     <services>
         <service id="harvest_app" class="%mattvick_harvest_app.service.class%">
             <argument type="service" id="mattvick_harvest_app.api"/>
+            <argument key="user">%mattvick_harvest_app.user%</argument>
+            <argument key="password">%mattvick_harvest_app.password%</argument>
+            <argument key="account">%mattvick_harvest_app.account%</argument>
+            <argument key="ssl">%mattvick_harvest_app.ssl%</argument>
+            <argument key="mode">%mattvick_harvest_app.mode%</argument>
+            <argument key="headers">%mattvick_harvest_app.headers%</argument>
         </service>
         
         <service id="mattvick_harvest_app.api" class="%mattvick_harvest_app.api.class%">
             <file>%mattvick_harvest_app.file%</file>
-            <argument key="_user">%mattvick_harvest_app._user%</argument>
-            <argument key="_password">%mattvick_harvest_app._password%</argument>
-            <argument key="_account">%mattvick_harvest_app._account%</argument>
-            <argument key="_ssl">%mattvick_harvest_app._ssl%</argument>
-            <argument key="_mode">%mattvick_harvest_app._mode%</argument>
-            <argument key="_headers">%mattvick_harvest_app._headers%</argument>
         </service>
     </services>
 </container>
