@@ -6,10 +6,12 @@
 
     <parameters>
         <parameter key="mattvick_harvest_app.file">null</parameter>
-        <parameter key="mattvick_harvest_app.consumer_key">null</parameter>
-        <parameter key="mattvick_harvest_app.consumer_secret">null</parameter>
-        <parameter key="mattvick_harvest_app.oauth_token">null</parameter>
-        <parameter key="mattvick_harvest_app.oauth_token_secret">null</parameter>
+        <parameter key="mattvick_harvest_app._user">null</parameter>
+        <parameter key="mattvick_harvest_app._password">null</parameter>
+        <parameter key="mattvick_harvest_app._account">null</parameter>
+        <parameter key="mattvick_harvest_app._ssl">null</parameter>
+        <parameter key="mattvick_harvest_app._mode">null</parameter>
+        <parameter key="mattvick_harvest_app._headers">null</parameter>
         
         <parameter key="mattvick_harvest_app.api.class">HarvestApi</parameter>
         <parameter key="mattvick_harvest_app.service.class">Mattvick\HarvestAppBundle\Services\HarvestApp</parameter>
@@ -22,10 +24,12 @@
         
         <service id="mattvick_harvest_app.api" class="%mattvick_harvest_app.api.class%">
             <file>%mattvick_harvest_app.file%</file>
-            <argument key="consumer_key">%mattvick_harvest_app.consumer_key%</argument>
-            <argument key="consumer_secret">%mattvick_harvest_app.consumer_secret%</argument>
-            <argument key="oauth_token">%mattvick_harvest_app.oauth_token%</argument>
-            <argument key="oauth_token_secret">%mattvick_harvest_app.oauth_token_secret%</argument>
+            <argument key="_user">%mattvick_harvest_app._user%</argument>
+            <argument key="_password">%mattvick_harvest_app._password%</argument>
+            <argument key="_account">%mattvick_harvest_app._account%</argument>
+            <argument key="_ssl">%mattvick_harvest_app._ssl%</argument>
+            <argument key="_mode">%mattvick_harvest_app._mode%</argument>
+            <argument key="_headers">%mattvick_harvest_app._headers%</argument>
         </service>
     </services>
 </container>

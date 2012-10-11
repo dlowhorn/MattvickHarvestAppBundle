@@ -23,10 +23,12 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->scalarNode('file')->defaultValue('%kernel.root_dir%/../vendor/HaPi-1.1.1/HarvestAPI.php')->end()
-                ->scalarNode('consumer_key')->isRequired()->cannotBeEmpty()->end()
-                ->scalarNode('consumer_secret')->isRequired()->cannotBeEmpty()->end()
-                ->scalarNode('oauth_token')->isRequired()->cannotBeEmpty()->end()
-                ->scalarNode('oauth_token_secret')->isRequired()->cannotBeEmpty()->end()
+                ->scalarNode('_user')->isRequired()->cannotBeEmpty()->end()
+                ->scalarNode('_password')->isRequired()->cannotBeEmpty()->end()
+                ->scalarNode('_account')->isRequired()->cannotBeEmpty()->end()
+                ->scalarNode('_ssl')->defaultValue(true)->end()
+                ->scalarNode('_mode')->defaultValue('FAIL')->end()
+                ->scalarNode('_headers')->defaultNull()->end()
                 ->scalarNode('alias')->defaultNull()->end()
             ->end()
         ;
