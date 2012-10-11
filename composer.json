@@ -10,11 +10,6 @@
             "email": "vickery.matthew@gmail.com"
         }
     ],
-    "require": {
-        "php": ">=5.3.2",
-        "symfony/framework-bundle": "2.*",
-        "mdbitz/hapi": "*"
-    },
     "repositories": [
         {
             "type": "package",
@@ -28,6 +23,11 @@
             }
         }
     ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "2.*",
+        "mdbitz/hapi": "*"
+    },
     "autoload": {
         "psr-0": { "Mattvick\\HarvestAppBundle": "" }
     },
