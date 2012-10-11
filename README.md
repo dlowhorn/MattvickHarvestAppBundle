@@ -1,7 +1,9 @@
 # Introduction
-Symfony2 wrapper around  [HaPi Harvest API client](http://labs.mdbitz.com/harvest-api/) for app usage.
+Symfony2 wrapper around  [HaPi](http://labs.mdbitz.com/harvest-api/) [Harvest](http://www.getharvest.com/) API client for app usage.
 
 MattvickHarvestAppBundle is just a simple proxy bundle between HaPi HarvestAPI client and symfony2. It is only meant to be used as a clientless app. 
+
+Code borrowed heavily from [InoriTwitterAppBundle](https://github.com/Inori/InoriTwitterAppBundle) a great Twitter bundle and inspired by [Harvest4Clients](https://github.com/jkenters/Harvest4Clients) a 
 
 # Example usage
 Example use-case for this bundle would be display Harvest data (from your project account) about clients, projects or tasks etc in your system.
@@ -64,9 +66,9 @@ Configure the `harvest_app` service in your YAML configuration:
     #app/config/config.yml
     mattvick_harvest_app:
         file:       %kernel.root_dir%/../vendor/mdbitz/hapi/HarvestAPI.php
-        user:      xxxxxx
+        user:      xxxxxx  # this is your email address
         password:  xxxxxx
-        account:   xxxxxx
+        account:   xxxxxx  # this is you subdomain (see below)
         ssl:       true
 
 **NB!** The `account:` is your harvest subdomain such as https://**example**.harvestapp.com/.
