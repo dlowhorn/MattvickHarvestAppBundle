@@ -11,19 +11,6 @@
             "email": "vickery.matthew@gmail.com"
         }
     ],
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "mdbitz/hapi",
-                "version": "1.1.1",
-                "dist": {
-                    "url": "http://labs.mdbitz.com/wp-content/uploads/2010/10/HaPi-1.1.1.zip",
-                    "type": "zip"
-                }
-            }
-        }
-    ],
     "require": {
         "php": ">=5.3.2",
         "symfony/framework-bundle": "2.*",
