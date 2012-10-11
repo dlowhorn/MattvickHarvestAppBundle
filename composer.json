@@ -1,6 +1,7 @@
 {
     "name": "mattvick/harvest-app-bundle",
     "type": "symfony-bundle",
+    "minimum-stability": "dev",
     "description": "Symfony2 wrapper around HaPi Harvest API client for app usage",
     "keywords": ["Harvest", "API"],
     "license": "MIT",
