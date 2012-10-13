@@ -65,13 +65,11 @@ Configure the `harvest_app` service in your YAML configuration:
 
     #app/config/config.yml
     mattvick_harvest_app:
-        file:       %kernel.root_dir%/../vendor/mdbitz/hapi/HarvestAPI.php
         user:      xxxxxx  # this is your email address
         password:  xxxxxx
-        account:   xxxxxx  # this is you subdomain (see below)
-        ssl:       true
+        account:   xxxxxx  # this is your Harvest subdomain (see below)
 
-**NB!** The `account:` is your harvest subdomain such as https://**example**.harvestapp.com/.
+**NB!** The `account` is the Harvest subdomain you use to access Harvest, such as: https://**subdomain**.harvestapp.com/.
 
 Now tell composer to download the bundle by running the command:
 
@@ -89,9 +87,25 @@ An example use in a controller is as follows:
 
     // ...
     $api = $this->get('harvest_app')->getApi();
-    $result = $api->getClient( 123456 );
-    if( $result->isSuccess() ) {
+
+    $result = $api->getClient(123456);
+    if ($result->isSuccess()) {
         $client = $result->data;
+    }
+
+To use the advanced reporting functions of HarvestReports:
+
+    // ...
+    $api = $this->container->get('harvest_app_reports')->getApi();
+
+An example use in a controller is as follows:
+
+    // ...
+    $api = $this->get('harvest_app_reports')->getApi();
+
+    $result = $api->getActiveProjects();
+    if ($result->isSuccess()) {
+        $projects = $result->data;
     }
 
 See the [HaPi Harvest API documentation](http://labs.mdbitz.com/harvest-api/docs/) for more examples.
