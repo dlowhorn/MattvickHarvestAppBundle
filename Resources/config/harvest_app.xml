@@ -26,7 +26,7 @@
             <argument key="mode">%mattvick_harvest_app.mode%</argument>
         </service>
         <service id="harvest_app_reports" class="%mattvick_harvest_app_reports.service.class%">
-            <argument type="service" id="mattvick_harvest_app_reports.api"/>
+            <argument type="service" id="mattvick_harvest_app.reports"/>
             <argument key="user">%mattvick_harvest_app.user%</argument>
             <argument key="password">%mattvick_harvest_app.password%</argument>
             <argument key="account">%mattvick_harvest_app.account%</argument>
