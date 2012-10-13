@@ -22,7 +22,6 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->scalarNode('file')->defaultValue('%kernel.root_dir%/../vendor/HaPi-1.1.1/HarvestAPI.php')->end()
                 ->scalarNode('user')->isRequired()->cannotBeEmpty()->end()
                 ->scalarNode('password')->isRequired()->cannotBeEmpty()->end()
                 ->scalarNode('account')->isRequired()->cannotBeEmpty()->end()

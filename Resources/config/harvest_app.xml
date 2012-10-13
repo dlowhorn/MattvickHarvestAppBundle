@@ -6,14 +6,14 @@
 
     <parameters>
         <parameter key="mattvick_harvest_app.service.class">Mattvick\HarvestAppBundle\Services\HarvestApp</parameter>
+        <parameter key="mattvick_harvest_app_reports.service.class">Mattvick\HarvestAppBundle\Services\HarvestAppReports</parameter>
+        <parameter key="mattvick_harvest_app.api.class">HarvestAPI</parameter>
+        <parameter key="mattvick_harvest_app.reports.class">HarvestReports</parameter>
         <parameter key="mattvick_harvest_app.user">null</parameter>
         <parameter key="mattvick_harvest_app.password">null</parameter>
         <parameter key="mattvick_harvest_app.account">null</parameter>
         <parameter key="mattvick_harvest_app.ssl">null</parameter>
         <parameter key="mattvick_harvest_app.mode">null</parameter>
-        
-        <parameter key="mattvick_harvest_app.api.class">HarvestApi</parameter>
-        <parameter key="mattvick_harvest_app.file">null</parameter>
     </parameters>
     
     <services>
@@ -25,9 +25,15 @@
             <argument key="ssl">%mattvick_harvest_app.ssl%</argument>
             <argument key="mode">%mattvick_harvest_app.mode%</argument>
         </service>
-        
-        <service id="mattvick_harvest_app.api" class="%mattvick_harvest_app.api.class%">
-            <file>%mattvick_harvest_app.file%</file>
+        <service id="harvest_app_reports" class="%mattvick_harvest_app_reports.service.class%">
+            <argument type="service" id="mattvick_harvest_app_reports.api"/>
+            <argument key="user">%mattvick_harvest_app.user%</argument>
+            <argument key="password">%mattvick_harvest_app.password%</argument>
+            <argument key="account">%mattvick_harvest_app.account%</argument>
+            <argument key="ssl">%mattvick_harvest_app.ssl%</argument>
+            <argument key="mode">%mattvick_harvest_app.mode%</argument>
         </service>
+        <service id="mattvick_harvest_app.api" class="%mattvick_harvest_app.api.class%" />
+        <service id="mattvick_harvest_app.reports" class="%mattvick_harvest_app.reports.class%" />
     </services>
 </container>
