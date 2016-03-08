@@ -2,7 +2,7 @@
     "name": "mattvick/harvest-app-bundle",
     "type": "symfony-bundle",
     "minimum-stability": "dev",
-    "description": "Symfony2 wrapper around HaPi Harvest API client for app usage",
+    "description": "Symfony3 wrapper around HaPi Harvest API client for app usage",
     "keywords": ["Harvest", "API"],
     "license": "MIT",
     "authors": [
@@ -12,8 +12,8 @@
         }
     ],
     "require": {
-        "php": ">=5.3.2",
-        "symfony/framework-bundle": "2.*",
+        "php": ">=5.5.9",
+        "symfony/symfony": "3.*",
         "mdbitz/hapi": "*"
     },
     "autoload": {
